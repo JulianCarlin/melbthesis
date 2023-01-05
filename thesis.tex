@@ -21,20 +21,11 @@
 % Table of contents depth
 \setcounter{tocdepth}{2}
 
-%-------- Process flows & tikz
-
-
-\usepackage{tikz}
-\usetikzlibrary{shapes, arrows, positioning}
-
-
-
 %-------- Multicol in bib
 \usepackage{multicol}
 \setlength{\columnsep}{1cm}
 \renewcommand{\bibpreamble}{\begin{multicols}{2}}
 \renewcommand{\bibpostamble}{\end{multicols}}
-
 
 %-------------COMMANDS - SHORTCUTS --------%
 
@@ -50,7 +41,7 @@
 
 %-------------COMMANDS - EDITING --------%
 \newcommand{\todo}[1]{{\color{red}~\textsf{[{\bf TODO}: #1]}}} %todos
-
+ 
 %-------------COMMANDS - BIB --------%
 
 % shortcuts used by NASA/ADS
@@ -90,15 +81,14 @@
 
 % the back matter
 \clearpage
-\phantomsection
+\phantomsection 
 % Change bib name to references
 \addcontentsline{toc}{chapter}{References}
 % Stylefile - swap as needed
 \bibliographystyle{mnras}
+
 % Make reference font very small
 {\scriptsize
   \bibliography{thesis}{}}
-
-
 
 \end{document}
