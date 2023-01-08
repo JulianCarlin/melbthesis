@@ -13,7 +13,7 @@
 % If you need to change font size etc. 
 \LoadClass[12pt, oneside, a4paper]{book}
 
-% some definitions
+% Some definitions
 \def\degreeyear#1{\gdef\@degreeyear{#1}}
 \def\degreemonth#1{\gdef\@degreemonth{#1}}
 \def\degree#1{\gdef\@degree{#1}}
@@ -30,134 +30,107 @@
 \def\pdTwoName#1{\gdef\@pdTwoName{#1}}
 \def\pdTwoSchool#1{\gdef\@pdTwoSchool{#1}}
 \def\pdTwoYear#1{\gdef\@pdTwoYear{#1}}
-
-
-% for links in references
-\usepackage{hyperref}
+\def\orcid#1{\gdef\@orcid{#1}}
 
 % ---- Chapter/section formatting
 \setlength{\headheight}{15pt}
 \pagestyle{plain}
 \RequirePackage{titling}
 \RequirePackage{titlesec, blindtext, color}
-\newcommand{\hsp}{\hspace{10pt}}
-
-% Chapter format -- using fncychap
-\usepackage[Sonny]{fncychap}
-
-%  Section and subsections -- using titlesec
 \titleformat{\section}[hang]{\Large\scshape}{\thesection.}{1em}{}
 \titleformat{\subsection}[hang]{\large\itshape}{\thesection.}{1em}{}
 \titleformat{\subsubsection}[hang]{\normalfont\itshape}{\thesection.}{1em}{}
 
+\RequirePackage[Sonny]{fncychap}
+\RequirePackage[titletoc]{appendix}
+\renewcommand{\setthesection}{\arabic{chapter}.A\arabic{section}}
+\RequirePackage[titles]{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftchapfont}{\normalsize \scshape}
+\renewcommand{\cftsecfont}{\normalsize \scshape}
+\renewcommand\listfigurename{List of figures}
 
-% ----- From original template -- it's a mystery
+% Units and math symbols
+\RequirePackage{amsmath}
+\RequirePackage{siunitx}
+\DeclareSIUnit\year{yr}
+\DeclareSIUnit\gauss{G}
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+\sisetup{range-phrase = \text{--}}
+\sisetup{separate-uncertainty = true}
 
-\RequirePackage{kvoptions}
-\DeclareStringOption{School}[]
-\ProcessKeyvalOptions*
-\RequirePackage{packages/\Dissertate@School/style}
+% Line number mode - useful during writing/reviewing
+% (Must be after amsmath but before csquotes or raises warning)
+\usepackage[left]{lineno}
 
-\RequirePackage{graphicx}
-\RequirePackage{amssymb}
-\RequirePackage{lettrine}
-\RequirePackage{natbib}
-% \RequirePackage[natbib=true, maxbibnames=3,doi=false,isbn=false,url=false]{biblatex}
-%\renewcommand{\bibnumfmt}[1]{[#1]}
+% For bibliography using biblatex
+\RequirePackage[english]{babel}
+\RequirePackage{csquotes}
+\RequirePackage[natbib=true, 
+               sorting=none,
+               citestyle=phys,
+               bibstyle=phys,
+               ]{biblatex}
+% Make Bibliography chapter heading "References"
+\DefineBibliographyStrings{english}{%
+   bibliography = {References},
+   references = {References},
+}
 
-\makeatother
-%\RequirePackage[width=5.75in, letterpaper]{geometry}
-%\RequirePackage{fancyhdr}
-
+% Page and margin size
 \RequirePackage{geometry}
- \geometry{
+\geometry{
     a4paper,
     right=30mm,
     left=30mm,
     top=30mm,
     bottom=30mm
- }
-
-
-
-\usepackage[titletoc]{appendix}
-\renewcommand{\setthesection}{\arabic{chapter}.A\arabic{section}}
-
-\RequirePackage{setspace}
-\RequirePackage{booktabs}
-\RequirePackage[tight,nice]{units}
-\RequirePackage{verbatim}
-% \setcounter{tocdepth}{1}
-
-\RequirePackage{url}
-\usepackage[titles]{tocloft}
-\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
-\renewcommand{\cftchapfont}{\normalsize \scshape}
-\renewcommand{\cftsecfont}{\normalsize \scshape}
-% \usepackage{fixltx2e}
-%\usepackage{ragged2e}
-
-\renewcommand\bibname{References}
-\renewcommand\listfigurename{List of figures}
-%\RaggedRight
-
-\parindent 12pt
-
-\RequirePackage{color}
-\usepackage{epigraph}
-\usepackage{hyperref}
-\usepackage{xcolor}
-\RequirePackage{url}
-\RequirePackage{amssymb}
-\RequirePackage{amsmath}
-\RequirePackage{siunitx}
-\RequirePackage{physics}
-%\sisetup{per-mode=symbol}
-\DeclareSIUnit\year{yr}
-\RequirePackage{cleveref}
-\usepackage[T1]{fontenc}
-\usepackage{kpfonts}%  for math    
-\usepackage[mono=false]{libertine}%  serif and sans serif
-\sisetup{range-phrase = \text{--}}
-\sisetup{separate-uncertainty = true}
-\sisetup{math-micro=\text{µ},text-micro=µ}
-\DeclareSIUnit\gauss{G}
-\DeclareMathOperator*{\argmax}{arg\,max} 
-\providecommand\condprob[2]{P\left(#1\,\middle\vert\,#2\right)}
-\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
-
-\renewcommand{\thefootnote}{\fnsymbol{footnote}}
-
-% an environment for paragraph-style section
-\providecommand\newthought[1]{%
-   \addvspace{1.0\baselineskip plus 0.5ex minus 0.2ex}%
-   \noindent#1%
 }
 
-\iffalse
+% Tables and figures
+\RequirePackage{graphicx}
+\RequirePackage{booktabs}
+\RequirePackage{subcaption}
+\RequirePackage{multirow}
+\RequirePackage{multicol}
 
-% Align reference numbers so that they do not cause an indent
-\newlength\mybibindent
-\setlength\mybibindent{0pt}
-\makeatletter
-\renewenvironment{thebibliography}[1]
-    {\chapter*{\bibname}%
-     \@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
-     \list{\@biblabel{\@arabic\c@enumiv}}
-          {\settowidth\labelwidth{\@biblabel{999}}
-           \leftmargin\labelwidth
-            \advance\leftmargin\dimexpr\labelsep+\mybibindent\relax\itemindent-\mybibindent
-           \@openbib@code
-           \usecounter{enumiv}
-           \let\p@enumiv\@empty
-           \renewcommand\theenumiv{\@arabic\c@enumiv}}
-     \sloppy
-     \clubpenalty4000
-     \@clubpenalty \clubpenalty
-     \widowpenalty4000%
-     \sfcode`\.\@m}
-    {\def\@noitemerr
-      {\@latex@warning{Empty `thebibliography' environment}}
-     \endlist}
+% Colour packages
+\RequirePackage{color}
+\RequirePackage{xcolor}
+
+% URL and hyperlinking references
+\RequirePackage{url}
+\RequirePackage{hyperref}
+\RequirePackage{cleveref}
+\definecolor{NiceBlue}{rgb}{.035, 0.254, 0.514}
+\hypersetup{
+    colorlinks,
+    citecolor=NiceBlue,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=NiceBlue,
+}
+
+% Font choices
+\RequirePackage[T1]{fontenc}
+\RequirePackage{kpfonts}   % for math    
+\RequirePackage[mono=true]{libertinus}  % serif and sans serif
+
+% Other miscellaneous packages
+\RequirePackage{orcidlink}
+\setlength{\marginparwidth}{2cm}
+\RequirePackage{todonotes}
+\RequirePackage[inline]{enumitem}
+\setlist*[enumerate]{label=\roman*)}
+% \setlist[label=\romannumeral*)]*{}
+\RequirePackage{lipsum}
+
+% Footenote style choice
+% \renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+% ----- From original template
+\RequirePackage{kvoptions}
+\DeclareStringOption{School}[]
+\ProcessKeyvalOptions*
+\RequirePackage{packages/\Dissertate@School/style}
 \makeatother
-\fi

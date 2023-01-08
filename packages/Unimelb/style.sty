@@ -5,30 +5,15 @@
 \universitycity{Melbourne}
 \universitystate{Victoria}
 
-\definecolor{SchoolColor}{rgb}{.035, 0.254, 0.514}
-% \definecolor{chaptergrey}{rgb}{0.2600, 0.0200, 0.4600} % dialed back a little
-% \definecolor{midgrey}{rgb}{0.4, 0.4, 0.4}
-
-\hypersetup{
-    colorlinks,
-    citecolor=blue,
-    filecolor=black,
-    linkcolor=black,
-    urlcolor=blue,
-}
-
 % This is where you change the ordering of the frontmatter
 \renewcommand{\frontmatter}{
 	\pagenumbering{roman}
 	\input{frontmatter/personalize}
 	\maketitle
-	% \dedicationpage
-	% \copyrightpage
-	% \frontispiece
+	\dedicationpage
 	\abstractpage
     \declaration
     \preface
-	% \contrib
 	\acknowledgments
 	\tableofcontents
 	
@@ -64,8 +49,11 @@
 	\begin{center}
 	\Huge {\thetitle} \normalsize \\
 	\vspace{25pt}
-	\theauthor\\
-    \textsc{ \href{https://orcid.org/0000-0001-5694-0809}{ORCID} \\}
+	\theauthor \\ 
+	\vspace{8pt}
+	\@orcid \\
+
+    % \orcid \\
 	\vspace{135pt}
 	\textsc{\@degreemonth, \@degreeyear \\
 	  \vspace{10pt}

@@ -1,94 +1,56 @@
 %!TEX encoding = UTF-8 Unicode
-% Template kindly provided by Lucy Strang (2021), as a modified version of Dissertate, 
-% with Unimelb style changes
+% Template modified by Julian Carlin (2023) from 
+% Lucy Strang's (2022) modified version of Dissertate
 \documentclass[School=Unimelb]{Dissertate}
 
-%-------- Custom additions
-% Line number mode - useful during writing/reviewing
-\usepackage[left]{lineno}
-% For subfigures
-\usepackage{subcaption}
-% For appendices in a chapter
-\usepackage{appendix}
-% Honestly I don't remember what this does but I'm too scared to remove it
-\usepackage{chngcntr}
-% Allows multiple rows/columns in tables
-\usepackage{multirow}
-% For template demo
-\usepackage{lipsum}
+% ADD PACKAGES IN DISSERTATE.CLS NOT HERE
 
+% Add bibliography file(s) here
+\addbibresource{thesis.bib}
 
 % Table of contents depth
 \setcounter{tocdepth}{2}
 
-%-------- Multicol in bib
-\usepackage{multicol}
-\setlength{\columnsep}{1cm}
-\renewcommand{\bibpreamble}{\begin{multicols}{2}}
-\renewcommand{\bibpostamble}{\end{multicols}}
+%------------- COMMANDS - SHORTCUTS -------------%
 
-%-------------COMMANDS - SHORTCUTS --------%
+\DeclareMathOperator*{\argmax}{arg\,max} 
+\providecommand\condprob[2]{P\left(#1\,\middle\vert\,#2\right)}
+\newcommand{\hsp}{\hspace{10pt}}
+\newcommand{\xp}{X_{\textrm{p}}} % stress prior to glitch X_p
+\newcommand{\rhot}{\rho_{\Delta t}} % autocorrelation between consecutive waiting times
+\newcommand{\rhox}{\rho_{\Delta X}} % autocorrelation between consecutive sizes
+\newcommand{\rhob}{\rho_{\,\textrm{b}}} %cross-correlation between size and backward waiting time
+\newcommand{\rhof}{\rho_{\,\textrm{f}}} %cross-correlation between size and forward waiting time
+\newcommand{\td}{\textrm{d}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\xc}{X_\textrm{c}}
+\newcommand{\avet}{\langle \Delta t \rangle}
 
-% put your shortcuts here
 
-%-------------COMMANDS - UNITS --------%
+%------------- COMMANDS - UNITS -------------%
 
 \newcommand{\hr}{\, {\rm hr}}
 \newcommand{\kyr}{\, {\rm kyr}}
 \newcommand{\hz}{\, {\rm Hz}}
-\newcommand{\tesla}{\, {\rm T}}
 
-
-%-------------COMMANDS - EDITING --------%
-\newcommand{\todo}[1]{{\color{red}~\textsf{[{\bf TODO}: #1]}}} %todos
+%------------- COMMANDS - EDITING -------------%
+% \newcommand{\todo}[1]{{\color{red}~\textsf{[{\bf TODO}: #1]}}}
  
-%-------------COMMANDS - BIB --------%
-
-% shortcuts used by NASA/ADS
-\newcommand\aj{The Astronomical Journal}
-\newcommand\apj{The Astrophysical Journal}
-\newcommand\apjl{The Astrophysical Journal Letters}
-\newcommand\apjs{The Astrophysical Journal Supplement Series}
-\newcommand\mnras{Monthly Notices of the Royal Astronomical Society}
-
-% Formats bibliography spacing
-\newlength{\bibitemsep}\setlength{\bibitemsep}{.2\baselineskip plus .05\baselineskip minus .05\baselineskip}
-\newlength{\bibparskip}\setlength{\bibparskip}{0pt}
-\let\oldthebibliography\thebibliography
-\renewcommand\thebibliography[1]{%
-  \oldthebibliography{#1}%
-  \setlength{\parskip}{\bibitemsep}%
-  \setlength{\itemsep}{\bibparskip}%
-}
-
-
-\author{Julian Brian Carlin}
+%------------- DOCUMENT BEGINS -------------%
 \begin{document}
-\graphicspath{{./figures/}}
-% the front matter
-\frontmatter
+  \graphicspath{{./figures/}}
+  
+  \frontmatter
 
-\linenumbers
+  \linenumbers
 
-
-% include each chapter...
-%\setcounter{chapter}{-1}  % start chapter numbering at 0
-\chapter{A long-expected party}
-\label{chap:chap1}
-\input{chapters/chapter1}
- 
-\singlespacing
-
-% the back matter
-\clearpage
-\phantomsection 
-% Change bib name to references
-\addcontentsline{toc}{chapter}{References}
-% Stylefile - swap as needed
-\bibliographystyle{mnras}
-
-% Make reference font very small
-{\scriptsize
-  \bibliography{thesis}{}}
+  \chapter{Brownian Stress Accumulation}
+  \label{chap:bsa}
+  \input{chapters/bsa}
+  
+  \clearpage
+  \phantomsection 
+  \addcontentsline{toc}{chapter}{References}
+  \printbibliography
 
 \end{document}
