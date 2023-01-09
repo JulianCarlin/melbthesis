@@ -26,6 +26,44 @@
 \newcommand{\xc}{X_\textrm{c}}
 \newcommand{\avet}{\langle \Delta t \rangle}
 
+\newcommand{\xmax}{X_{\rm th,\,max}}
+
+\newcommand{\etadx}{\eta\left[\Delta X_{i}\,|\,X(t_i^-)\right]}
+% \newcommand{\xc}{X_\textrm{cr}} % critical stress
+
+\newcommand{\mj}{\mathcal{J}}
+\newcommand{\mf}{\mathcal{F}}
+\newcommand{\ml}{\mathcal{L}}
+\newcommand{\lth}{\mathcal{L}_{\rm th}}
+\newcommand{\lthg}{\mathcal{L}_{\rm th,\,G}}
+\newcommand{\lthot}{\mathcal{L}_{\rm th,\,OT}}
+\newcommand{\tdr}{T_{\textrm{drift}}}
+\newcommand{\tasc}{T_{\textrm{asc}}}
+\newcommand{\degr}{^{\circ}}
+\newcommand{\pn}{p_{\rm noise}}
+\newcommand{\hul}{h_0^{95\%}}
+\newcommand{\hete}{HETE J1900.1$-$2455}
+\newcommand{\igra}{IGR J00291$+$5934}
+\newcommand{\igrb}{IGR J16597$-$3704}
+\newcommand{\igrc}{IGR J17062$-$6143}
+\newcommand{\igrd}{IGR J17379$-$3747}
+\newcommand{\igre}{IGR J17498$-$2921}
+\newcommand{\igrf}{IGR J17511$-$3057}
+\newcommand{\igrg}{IGR J17591$-$2342}
+\newcommand{\igrh}{IGR J18245$-$2452}
+\newcommand{\igri}{IGR J17494$-$3030}
+\newcommand{\maxi}{MAXI J0911$-$655}
+\newcommand{\ngc}{NGC 6440 X$-$2}
+\newcommand{\sax}{SAX J1808.4$-$3658}
+\newcommand{\saxb}{SAX J1748.9$-$2021}
+\newcommand{\swift}{Swift J1756.9$-$2508}
+\newcommand{\swiftb}{Swift J1749.4$-$2807}
+\newcommand{\xtea}{XTE J0929$-$314}
+\newcommand{\xteb}{XTE J1751$-$305}
+\newcommand{\xtec}{XTE J1807$-$294}
+\newcommand{\xted}{XTE J1814$-$338}
+\newcommand{\sco}{Scorpius X-1}
+
 
 %------------- COMMANDS - UNITS -------------%
 
@@ -44,10 +82,25 @@
 
   \linenumbers
 
-  \chapter{Brownian Stress Accumulation}
+  \chapter{Long-term statistics of pulsar glitches triggered by a Brownian stress accumulation process}
   \label{chap:bsa}
   \input{chapters/bsa}
   
+  \chapter{Long-term statistics of pulsar glitches due to history-dependent avalanches}
+  \label{chap:hda}
+  \input{chapters/hda}
+
+  \chapter{A statistical search for a uniform trigger threshold in solar flares from individual active regions}
+  \label{chap:sf}
+  \input{chapters/sf}
+
+  % \chapter{Introduction to continuous gravitational wave searches}
+  % \todo{text here}
+
+  \chapter{Search for continuous gravitational waves from 20 accreting millisecond x-ray pulsars in O3 LIGO data}
+  \label{chap:amxp}
+  \input{chapters/amxp}
+
   \clearpage
   \phantomsection 
   \addcontentsline{toc}{chapter}{References}

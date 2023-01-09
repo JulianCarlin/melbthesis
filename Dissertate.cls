@@ -93,6 +93,12 @@
 \RequirePackage{subcaption}
 \RequirePackage{multirow}
 \RequirePackage{multicol}
+\RequirePackage{dcolumn}% Align table columns on decimal point
+\newcolumntype{.}{D{.}{.}{-1}}
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+\RequirePackage{subcaption}
+\RequirePackage{threeparttable}
+\RequirePackage{pdflscape}
 
 % Colour packages
 \RequirePackage{color}
@@ -115,6 +121,8 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage{kpfonts}   % for math    
 \RequirePackage[mono=true]{libertinus}  % serif and sans serif
+\RequirePackage{pifont}
+\RequirePackage{bbm}
 
 % Other miscellaneous packages
 \RequirePackage{orcidlink}
@@ -122,11 +130,7 @@
 \RequirePackage{todonotes}
 \RequirePackage[inline]{enumitem}
 \setlist*[enumerate]{label=\roman*)}
-% \setlist[label=\romannumeral*)]*{}
 \RequirePackage{lipsum}
-
-% Footenote style choice
-% \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
 % ----- From original template
 \RequirePackage{kvoptions}
