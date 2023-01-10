@@ -127,7 +127,7 @@
 % Other miscellaneous packages
 \RequirePackage{orcidlink}
 \setlength{\marginparwidth}{2cm}
-\RequirePackage{todonotes}
+% \RequirePackage{todonotes}
 \RequirePackage[inline]{enumitem}
 \setlist*[enumerate]{label=\roman*)}
 \RequirePackage{lipsum}
