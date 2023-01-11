@@ -90,6 +90,7 @@
 % Tables and figures
 \RequirePackage{graphicx}
 \RequirePackage{booktabs}
+\RequirePackage{caption}
 \RequirePackage{subcaption}
 \RequirePackage{multirow}
 \RequirePackage{multicol}
@@ -99,6 +100,7 @@
 \RequirePackage{subcaption}
 \RequirePackage{threeparttable}
 \RequirePackage{pdflscape}
+\RequirePackage{nicematrix}
 
 % Colour packages
 \RequirePackage{color}
