@@ -8,9 +8,6 @@
 % Add bibliography file(s) here
 \addbibresource{thesis.bib}
 
-% Table of contents depth
-\setcounter{tocdepth}{2}
-
 %------------- COMMANDS - SHORTCUTS -------------%
 
 \DeclareMathOperator*{\argmax}{arg\,max} 
@@ -79,6 +76,14 @@
 
   \linenumbers
 
+  \chapter{Introduction}
+  \label{chap:intro}
+  \input{chapters/intro}
+
+  % \chapter{Autocorrelations in pulsar glitch waiting times and sizes}
+  % \label{chap:acorr}
+  % \input{chapters/acorr}
+
   % \chapter{Long-term statistics of pulsar glitches triggered by a Brownian stress accumulation process}
   % \label{chap:bsa}
   % \input{chapters/bsa}
@@ -91,12 +96,9 @@
   % \label{chap:sf}
   % \input{chapters/sf}
 
-  % \chapter{Introduction to continuous gravitational wave searches}
-  % \todo{text here}
-
-  \chapter{Search for continuous gravitational waves from 20 accreting millisecond x-ray pulsars in O3 LIGO data}
-  \label{chap:amxp}
-  \input{chapters/amxp}
+  % \chapter{Search for continuous gravitational waves from 20 accreting millisecond x-ray pulsars in O3 LIGO data}
+  % \label{chap:amxp}
+  % \input{chapters/amxp}
 
   \clearpage
   \phantomsection 

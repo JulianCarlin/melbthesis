@@ -38,8 +38,8 @@
 \RequirePackage{titling}
 \RequirePackage{titlesec, blindtext, color}
 \titleformat{\section}[hang]{\Large\scshape}{\thesection.}{1em}{}
-\titleformat{\subsection}[hang]{\large\itshape}{\thesection.}{1em}{}
-\titleformat{\subsubsection}[hang]{\normalfont\itshape}{\thesection.}{1em}{}
+\titleformat{\subsection}[hang]{\large\itshape}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}[hang]{\normalfont\itshape}{\thesubsubsection.}{1em}{}
 
 \RequirePackage[Sonny]{fncychap}
 \RequirePackage[titletoc]{appendix}
@@ -49,6 +49,8 @@
 \renewcommand{\cftchapfont}{\normalsize \scshape}
 \renewcommand{\cftsecfont}{\normalsize \scshape}
 \renewcommand\listfigurename{List of figures}
+% Table of contents depth
+\setcounter{tocdepth}{3}
 
 % Units and math symbols
 \RequirePackage{amsmath}
