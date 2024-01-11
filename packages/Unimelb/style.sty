@@ -7,10 +7,11 @@
 
 % This is where you change the ordering of the frontmatter
 \renewcommand{\frontmatter}{
-	\pagenumbering{roman}
+	\pagenumbering{gobble}
 	\input{frontmatter/personalize}
 	\maketitle
 	\dedicationpage
+	\pagenumbering{roman}
 	\abstractpage
     \declaration
     \preface
@@ -87,7 +88,7 @@
 \newcommand{\dedicationpage}{
 	\phantomsection
 	\newpage
-	\addcontentsline{toc}{chapter}{Dedication}
+	% \addcontentsline{toc}{chapter}{Dedication}
 	%\setcounter{page}{6}
 	\vspace*{\fill}
 	\scshape \noindent \input{frontmatter/dedication}
@@ -111,6 +112,7 @@
 	\addcontentsline{toc}{chapter}{Preface}
 	\chapter*{Preface}
 	\input{frontmatter/preface}
+	% \input{frontmatter/preface_diff}
 }
 
 \newcommand{\abstractpage}{

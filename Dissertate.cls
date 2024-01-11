@@ -41,7 +41,27 @@
 \titleformat{\subsection}[hang]{\large\itshape}{\thesubsection.}{1em}{}
 \titleformat{\subsubsection}[hang]{\normalfont\itshape}{\thesubsubsection.}{1em}{}
 
-\RequirePackage[Sonny]{fncychap}
+% \RequirePackage[Sonny]{fncychap}
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+{\normalfont\Large\filleft}
+{\sc\chaptertitlename\ \Huge{\thechapter}\\%
+\vspace{1.5cm}
+\titlerule[1pt]}
+{-20pt}
+{\Large}[\vspace{2ex}{\titlerule[1pt]}]
+
+\titleformat{name=\chapter,numberless}[display]
+{\normalfont\Large\filleft}
+{}
+{0pt}
+{\titlerule[1pt]
+\vspace{2ex}%
+\Large}[\vspace{2ex}{\titlerule[1pt]}]
+
+\titlespacing*{\chapter} {0pt}{0pt}{40pt}   %% adjust these numbers
+\titlespacing*{name=\chapter,numberless} {0pt}{-10pt}{30pt}   %% adjust these numbers
+
 \RequirePackage[titletoc]{appendix}
 \renewcommand{\setthesection}{\arabic{chapter}.A\arabic{section}}
 \RequirePackage[titles]{tocloft}
@@ -51,6 +71,7 @@
 \renewcommand\listfigurename{List of figures}
 % Table of contents depth
 \setcounter{tocdepth}{3}
+
 
 % Units and math symbols
 \RequirePackage{amsmath}
@@ -63,16 +84,25 @@
 
 % Line number mode - useful during writing/reviewing
 % (Must be after amsmath but before csquotes or raises warning)
-\usepackage[left]{lineno}
+% \usepackage[left]{lineno}
 
 % For bibliography using biblatex
 \RequirePackage[english]{babel}
 \RequirePackage{csquotes}
 \RequirePackage[natbib=true, 
                sorting=none,
-               citestyle=phys,
-               bibstyle=phys,
+               style=phys,
+               articletitle=false,
+               %    citestyle=numeric-comp,
+            %    bibstyle=numeric,
+               maxcitenames=2,
+               maxbibnames=10,
+            %    backref=true,
+               uniquename=false,
+               uniquelist=false,
                ]{biblatex}
+% Make \citep commands be in the "author year" rather than "author, year" style
+\renewcommand*{\nameyeardelim}{\addspace}
 % Make Bibliography chapter heading "References"
 \DefineBibliographyStrings{english}{%
    bibliography = {References},
@@ -103,6 +133,9 @@
 \RequirePackage{threeparttable}
 \RequirePackage{pdflscape}
 \RequirePackage{nicematrix}
+
+\newcommand\newsubcap[1]{\phantomcaption%
+       \caption*{\figurename~\thefigure\thesubfigure: #1}}
 
 % Colour packages
 \RequirePackage{color}

@@ -67,6 +67,7 @@
 
 %------------- COMMANDS - EDITING -------------%
 \newcommand{\todo}[1]{{\color{red}~\textsf{[{\bf TODO}: #1]}}}
+\newcommand{\red}[1]{{\color{red}~#1}}
 
 %------------- DOCUMENT BEGINS -------------%
 \begin{document}
@@ -74,31 +75,35 @@
   
   \frontmatter
 
-  \linenumbers
+  % \linenumbers
 
   \chapter{Introduction}
   \label{chap:intro}
   \input{chapters/intro}
 
-  % \chapter{Autocorrelations in pulsar glitch waiting times and sizes}
-  % \label{chap:acorr}
-  % \input{chapters/acorr}
+  \chapter{Autocorrelations in pulsar glitch waiting times and sizes}
+  \label{chap:acorr}
+  \input{chapters/acorr}
 
-  % \chapter{Long-term statistics of pulsar glitches triggered by a Brownian stress accumulation process}
-  % \label{chap:bsa}
-  % \input{chapters/bsa}
+  \chapter{Long-term statistics of pulsar glitches triggered by a Brownian stress accumulation process}
+  \label{chap:bsa}
+  \input{chapters/bsa}
   
-  % \chapter{Long-term statistics of pulsar glitches due to history-dependent avalanches}
-  % \label{chap:hda}
-  % \input{chapters/hda}
+  \chapter[Long-term statistics of pulsar glitches due to history-dependent \linebreak avalanches]{Long-term statistics of pulsar glitches due to history-dependent avalanches}
+  \label{chap:hda}
+  \input{chapters/hda}
 
-  % \chapter{A statistical search for a uniform trigger threshold in solar flares from individual active regions}
-  % \label{chap:sf}
-  % \input{chapters/sf}
+  \chapter{A statistical search for a uniform trigger threshold in solar flares from individual active regions}
+  \label{chap:sf}
+  \input{chapters/sf}
 
-  % \chapter{Search for continuous gravitational waves from 20 accreting millisecond x-ray pulsars in O3 LIGO data}
-  % \label{chap:amxp}
-  % \input{chapters/amxp}
+  \chapter{Search for continuous gravitational waves from 20 accreting millisecond x-ray pulsars in O3 LIGO data}
+  \label{chap:amxp}
+  \input{chapters/amxp}
+
+  \chapter{Conclusions and future directions}
+  \label{chap:conc}
+  \input{chapters/conclusion}
 
   \clearpage
   \phantomsection 
